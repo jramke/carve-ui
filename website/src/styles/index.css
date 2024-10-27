@@ -6,6 +6,7 @@
     --sl-color-text: var(--sl-color-white);
     --sl-color-text-accent: var(--sl-color-accent-high);
     --ec-brdRad: 0.5rem;
+    --sl-menu-button-size: 2.2rem;
 }
 
 [x-cloak] {
@@ -29,6 +30,14 @@ starlight-theme-select {
 }
 .site-title img {
     height: min(calc(var(--sl-nav-height) - 2 * var(--sl-nav-pad-y)), 1.8rem);
+}
+
+starlight-menu-button button {
+    @apply shadow-none;
+    /* @apply ring-[1px] ring-zinc-300; */
+}
+starlight-menu-button button svg {
+    --sl-icon-size: 1.2em !important;
 }
 
 .content-panel {

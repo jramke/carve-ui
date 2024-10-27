@@ -27,11 +27,11 @@ const isHomepage = Astro.url.pathname === '/';
 			<SocialIcons {...Astro.props} />
 		</div>
 	) : (
-		<div class="flex items-center gap-6 justify-end">
+		<div class="flex items-center gap-4 [@media(min-width:800px)]:gap-6 justify-end">
 			<div class="[@media(min-width:800px)]:w-[200px]">
 				<Search {...Astro.props} />
 			</div>
-			{/* <SocialIcons {...Astro.props} /> */}
+			<SocialIcons {...Astro.props} />
 		</div>
 	)}
 </div>
