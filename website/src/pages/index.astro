@@ -1,8 +1,8 @@
 ---
 import '../styles/home.css';
 import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
-import { LinkButton } from '@astrojs/starlight/components';
-import Accordion from '@components/demos/accordion.astro';
+import { Aside, LinkButton } from '@astrojs/starlight/components';
+// import Accordion from '@components/demos/accordion.astro';
 ---
 
 <StarlightPage frontmatter={{ 
@@ -25,10 +25,10 @@ import Accordion from '@components/demos/accordion.astro';
 		</div>
 	</div>
 
-	<div class="not-content pt-12 md:pt-20">
-		<div class="w-[400px]">
-			<Accordion />
-		</div>
+	<div class="not-content pt-12 md:pt-20 max-w-[600px] mx-auto">
+		<Aside type="caution" title="Under Construction">
+			Carve UI is currently in early development. Expect breaking changes in minor releases until 1.0 is ready! We're actively working on new components and features, so stay tuned!
+		</Aside>
 	</div>
 	
 </StarlightPage>

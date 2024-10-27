@@ -15,8 +15,8 @@ const isHomepage = Astro.url.pathname === '/';
 		<SiteTitle {...Astro.props} />
 	</div>
 	{isHomepage ? (
-		<div class="flex items-center gap-8">
-			<ul class="flex gap-8 list-none">
+		<div class="flex items-center gap-4 sm:gap-8">
+			<ul class="flex gap-4 sm:gap-8 list-none">
 				<li>
 					<a href="/introduction" class="[text-decoration:none] text-inherit underline-offset-2 hover:underline">Docs</a>
 				</li>
@@ -28,10 +28,10 @@ const isHomepage = Astro.url.pathname === '/';
 		</div>
 	) : (
 		<div class="flex items-center gap-6 justify-end">
-			<div class="w-[200px]">
+			<div class="[@media(min-width:800px)]:w-[200px]">
 				<Search {...Astro.props} />
 			</div>
-			<SocialIcons {...Astro.props} />
+			{/* <SocialIcons {...Astro.props} /> */}
 		</div>
 	)}
 </div>

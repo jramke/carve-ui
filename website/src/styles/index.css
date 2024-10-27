@@ -70,3 +70,7 @@ code {
 .expressive-code .copy button {
     @apply !border-zinc-200 !rounded-md;
 }
+
+.starlight-aside {
+    @apply rounded-md border-[1px] border-[var(--sl-color-asides-border)];
+}
