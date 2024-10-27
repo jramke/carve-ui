@@ -7,3 +7,5 @@ A collection of rugged headless component primitives for [Alpine.js](https://alp
 - [Melt UI](https://www.melt-ui.com/)
 - [Radix](https://www.radix-ui.com/)
 - [Pines UI](https://devdojo.com/pines)
+- [Bits UI](https://bits-ui.com/)
+- [React Aria](https://react-spectrum.adobe.com/react-aria/)

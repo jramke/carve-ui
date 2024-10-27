@@ -1,0 +1,36 @@
+---
+title: Getting started
+
+---
+import { Code } from '@astrojs/starlight/components';
+
+Carve UI provides a set of accessible, headless component primitives that integrate seamlessly with [Alpine.js](https://alpinejs.dev/). With Carve UI, you can add flexible components to your project while maintaining full control over styling and functionality. This guide will help you set up Carve UI in your project.
+
+## Installation
+
+First, you'll need to install `alpinejs`, `carve-ui`, and a few plugins. Carve UI components use certain Alpine plugins for enhanced interactivity, so be sure to include them:
+
+
+<Code lang="bash" code={`
+npm install alpinejs @alpinejs/collapse @alpinejs/focus @alpinejs/resize carve-ui
+`} />
+
+## Setting Up Alpine with Carve UI
+
+Once your packages are installed, configure Alpine.js and Carve UI in your main JavaScript file. Import Alpine and the necessary Carve UI functions, then register your components.
+
+<Code lang="js" code={`
+import Alpine from 'alpinejs'
+import { register, registerAll } from 'carve-ui'
+
+registerAll(Alpine)
+
+window.Alpine = Alpine
+Alpine.start()
+`} />
+
+Carve UI registers the needed plugins for you. If you want to only include some components you can register them like this.
+
+<Code lang="js" code={`
+register(Alpine, ['accordion', 'accordionItem'])
+`} />

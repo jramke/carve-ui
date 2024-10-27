@@ -28,7 +28,7 @@ export default defineConfig({
 					label: 'Overview',
 					items: [
 						{ label: 'Introduction', slug: 'introduction' },
-						{ label: 'Example', slug: 'example' },
+						{ label: 'Getting started', slug: 'getting-started' },
 					],
 				},
 				{
@@ -40,7 +40,6 @@ export default defineConfig({
 				ThemeProvider: './src/components/theme-provider.astro',
 				Header: './src/components/header.astro',
 				SocialIcons: './src/components/social-icons.astro',
-				SiteTitle: './src/components/site-title.astro',
 				Pagination: './src/components/pagination.astro',
 			}
 		}), 

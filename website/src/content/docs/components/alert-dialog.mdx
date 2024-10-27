@@ -1,0 +1,50 @@
+---
+title: Alert Dialog
+
+---
+import ComponentDemo from '@components/component-demo.astro';
+import { Code } from '@astrojs/starlight/components';
+import AlertDialog from '@components/demos/alert-dialog.astro';
+import AlertDialogCode from '@components/demos/alert-dialog.astro?raw';
+
+The **Alert Dialog** component in Carve UI is a modal dialog designed for critical messages that require user attention. It’s perfect for displaying alerts, confirmations, or actions that users need to acknowledge before proceeding, ensuring they focus on important information in a clear, accessible way.
+
+<ComponentDemo label="Accordion demo">
+    <AlertDialog slot="preview" />
+    <Code 
+        slot="code" 
+        lang="html" 
+        code={AlertDialogCode} 
+        mark={[
+            'x-data="alertDialog"', 
+            'x-ref="trigger"',
+            'x-teleport="body"',
+            'x-ref="wrapper" x-bind="wrapperProps"', 
+            'x-ref="backdrop" x-bind="backdropProps"', 
+            'x-ref="content" x-bind="contentProps"',
+            'x-ref="title"',
+            'x-ref="description"',
+            'x-bind="closeProps"',
+            'closeDialog()'
+        ]} 
+    />
+</ComponentDemo>
+
+## Structure
+
+<Code lang="html" code={`
+<div x-data="alertDialog">
+    <button x-ref="trigger"></button>
+    <template x-teleport="body">
+        <div x-ref="wrapper" x-bind="wrapperProps">
+            <div x-ref="backdrop" x-bind="backdropProps"></div>
+            <div x-ref="content" x-bind="contentProps">
+                <h2 x-ref="title">Alert Modal Title</h2>
+                <p x-ref="description"></p>
+                <button x-bind="closeProps"></button>
+                <button @click="closeDialog();"></button>
+            </div>
+        </div>
+    </template>
+</div>
+`} />

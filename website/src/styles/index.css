@@ -5,6 +5,11 @@
 :root[data-theme='light'] {
     --sl-color-text: var(--sl-color-white);
     --sl-color-text-accent: var(--sl-color-accent-high);
+    --ec-brdRad: 0.5rem;
+}
+
+[x-cloak] {
+    display: none !important;
 }
 
 h1,h2,h3 {
@@ -17,6 +22,13 @@ starlight-theme-select {
 
 .header {
     background-color: var(--sl-color-black);
+}
+
+.site-title {
+    @apply font-bold tracking-tight gap-3 text-2xl;
+}
+.site-title img {
+    height: min(calc(var(--sl-nav-height) - 2 * var(--sl-nav-pad-y)), 1.8rem);
 }
 
 .content-panel {
@@ -41,4 +53,20 @@ main .content-panel:first-child {
 }
 .sl-link-button.secondary {
     @apply hover:bg-[var(--sl-color-gray-7)] focus-visible:bg-[var(--sl-color-gray-7)];
+}
+
+code {
+    @apply rounded-md;
+}
+
+.expressive-code .frame {
+    --code-background: transparent !important;
+    --ec-frm-trmTtbDotsFg: color-mix(in srgb, var(--sl-color-gray-4), transparent 25%);
+    --ec-frm-trmTtbBg: var(--sl-color-gray-7);
+}
+.expressive-code .is-terminal .header {
+    display: none;
+}
+.expressive-code .copy button {
+    @apply !border-zinc-200 !rounded-md;
 }

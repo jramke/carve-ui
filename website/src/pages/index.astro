@@ -2,13 +2,16 @@
 import '../styles/home.css';
 import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
 import { LinkButton } from '@astrojs/starlight/components';
-import Accordion from '../components/primitives/accordion.astro';
+import Accordion from '@components/demos/accordion.astro';
 ---
 
 <StarlightPage frontmatter={{ 
-	title: 'Carve UI', 
+	title: '', 
 	template: 'splash',
 	description: 'Headless component primitives for Alpine.js.',
+	head: [
+		{ tag: 'title', content: 'Carve UI' }
+	]
 }}>
 	<div class="text-center pt-12 md:pt-20">
 		<h1 class="!text-5xl md:!text-6xl mb-8">Carve Through Complexity</h1>

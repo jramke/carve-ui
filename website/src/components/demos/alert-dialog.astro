@@ -1,0 +1,20 @@
+<div x-data="alertDialog">
+    <button x-ref="trigger" class="cursor-pointer inline-flex items-center justify-center h-10 px-4 py-2 text-sm font-medium transition-colors bg-white border rounded-md hover:bg-neutral-100 active:bg-white focus:bg-white focus:outline-none focus:ring-2 focus:ring-neutral-200/60 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none">Open Alert Dialog</button>
+    <template x-teleport="body">
+        <div x-ref="wrapper" x-bind="wrapperProps" class="fixed top-0 left-0 z-[99] flex items-center justify-center w-screen h-screen">
+            <div x-ref="backdrop" x-bind="backdropProps" class="absolute inset-0 w-full h-full bg-black bg-opacity-40"></div>
+            <div x-ref="content" x-bind="contentProps" class="relative w-full py-6 bg-white px-7 sm:max-w-lg sm:rounded-lg">
+                <div class="flex items-center justify-between pb-2">
+                    <h2 x-ref="title" class="text-lg font-semibold">Alert Dialog Title</h2>
+                </div>
+                <div class="relative w-auto" x-ref="description">
+                    <p>This is placeholder text. Replace it with your own content.</p>
+                </div>
+                <div class="flex gap-4">
+                    <button class="cursor-pointer" x-bind="closeProps">Cancel</button>
+                    <button class="cursor-pointer" @click="closeDialog(); console.log('confirmed');">Do it</button>
+                </div>
+            </div>
+        </div>
+    </template>
+</div>

@@ -1,43 +1,38 @@
----
----
-
-<div x-data="accordion" x-bind="accordionProps" class="relative w-full mx-auto text-sm font-normal bg-white border border-gray-200 divide-y divide-gray-200 rounded-md">
-    <div x-data="accordionItem({ initialOpen: true })" class="group">
+<div x-data="accordion" class="relative w-full mx-auto text-sm font-normal bg-white border border-gray-200 divide-y divide-gray-200 rounded-md">
+    <div x-data="accordionItem({ initialOpen: true })" class="cursor-pointer group">
         <h2 class="text-base font-semibold">
-            <button x-bind="triggerProps" x-ref="trigger" class="cursor-pointer overflow-hidden rounded-md flex items-center bg-white justify-between w-full p-4 text-left select-none underline-offset-2 group-hover:underline">
+            <button x-ref="trigger" class="cursor-pointer overflow-hidden rounded-md flex items-center bg-white justify-between w-full p-4 text-left select-none underline-offset-2 group-hover:underline">
                 <span>What is Carve?</span>
                 <svg aria-hidden="true" class="w-4 h-4 motion-safe:duration-200 ease-out" :class="{ 'rotate-180': isOpen }" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </button>
         </h2>
-        <div x-bind="contentProps" x-ref="content" x-cloak> 
+        <div x-ref="content" x-cloak> 
             <div class="p-4 pt-0 opacity-70">
-                Carve UI is a collection of rugged headless component primitives for Alpine.js.
+                Carve UI is a collection of rugged and accessible headless component primitives for Alpine.js.
             </div>
         </div>
     </div>
-
-    <div x-data="accordionItem" class="group">
+    <div x-data="accordionItem" class="cursor-pointer group">
         <h2 class="text-base font-semibold">
-            <button x-bind="triggerProps" x-ref="trigger" class="cursor-pointer overflow-hidden rounded-md flex items-center bg-white justify-between w-full p-4 text-left select-none underline-offset-2 group-hover:underline">
+            <button x-ref="trigger" class="cursor-pointer overflow-hidden rounded-md flex items-center bg-white justify-between w-full p-4 text-left select-none underline-offset-2 group-hover:underline">
                 <span>How do I install Carve?</span>
                 <svg aria-hidden="true" class="w-4 h-4 motion-safe:duration-200 ease-out" :class="{ 'rotate-180': isOpen }" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </button>
         </h2>
-        <div x-bind="contentProps" x-ref="content" x-cloak> 
+        <div x-ref="content" x-cloak>
             <div class="p-4 pt-0 opacity-70">
                 Add AlpineJS and Carve UI and start using the pre built primitives.
             </div>
         </div>
     </div>
-
-    <div x-data="accordionItem" class="group">
+    <div x-data="accordionItem" class="cursor-pointer group">
         <h2 class="text-base font-semibold">
-            <button x-bind="triggerProps" x-ref="trigger" class="cursor-pointer overflow-hidden rounded-md flex items-center bg-white justify-between w-full p-4 text-left select-none underline-offset-2 group-hover:underline">
+            <button x-ref="trigger" class="cursor-pointer overflow-hidden rounded-md flex items-center bg-white justify-between w-full p-4 text-left select-none underline-offset-2 group-hover:underline">
                 <span>Can i customize Carve?</span>
                 <svg aria-hidden="true" class="w-4 h-4 motion-safe:duration-200 ease-out" :class="{ 'rotate-180': isOpen }" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </button>
         </h2>
-        <div x-bind="contentProps" x-ref="content" x-cloak> 
+        <div x-ref="content" x-cloak>
             <div class="p-4 pt-0 opacity-70">
                 Yes! Carve is built to be customized and extended.
             </div>
