@@ -63,7 +63,9 @@ export const Tabs = defineComponent((userOptions: Partial<TabsOptions> = {}) => 
         },
         values: {} as Record<string, Record<'trigger' | 'content', HTMLElement>>,
 
-        setActiveTab(tab: string, focusTrigger: boolean = false) {            
+        setActiveTab(tab: string, focusTrigger: boolean = false) { 
+            if (this.activeTab === tab) return;
+
             if (tab === '') {
                 throw new Error('activeTab cannot be an empty string.');
             }
@@ -72,7 +74,7 @@ export const Tabs = defineComponent((userOptions: Partial<TabsOptions> = {}) => 
                 throw new Error('activeTab must be a valid tab trigger value.');
             }
 
-            this.activeTab = tab; 
+            this.activeTab = tab;
 
             const trigger = this.values[tab].trigger;
             if (!trigger) return;
@@ -106,11 +108,10 @@ export const Tabs = defineComponent((userOptions: Partial<TabsOptions> = {}) => 
                     const searchParam = getUrlSearchParam('tab');
                     searchParam && (this.initialActive = searchParam);
                 }
-                console.log(this.initialActive, value);
-                
             }
             if (value === this.initialActive) {
                 this.setActiveTab(value);
+                this.updateIndicator(true);
             }
         },
         setValueContext(value: string, key: string, element: HTMLElement) {

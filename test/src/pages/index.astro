@@ -125,7 +125,7 @@
                     <button x-data="tabTrigger('tab-1')" class="p-3" :class="{ 'text-red-500': isActive }">Tab 1</button>
                     <button x-data="tabTrigger('tab-2')" class="p-3" :class="{ 'text-red-500': isActive }">Tab 2 longer</button>
                     <button x-data="tabTrigger('tab-3')" class="p-3" :class="{ 'text-red-500': isActive }">Tab 3</button>
-                    <div x-ref="indicator" class="size-3 bg-green-500 motion-safe:transition-[transform,width,height]"></div>
+                    <div x-ref="indicator" x-cloak class="size-3 bg-green-500 motion-safe:transition-[transform,width,height]"></div>
                 </div>
                 <div class="p-3" :class="{ 'text-red-500': isActive }" x-data="tabContent('tab-1')">
                     Tab 1 content
