@@ -4,6 +4,7 @@ import Alpine from "alpinejs";
 import { defineComponent } from "src/internal/helpers/alpine";
 import { safelySetId } from "src/internal/helpers/attributes";
 import { warn } from "src/internal/helpers/logs";
+import { getStyle } from "src/internal/helpers/styles";
 import { getUrlHash, getUrlSearchParam, setUrlHash, setUrlSearchParam } from "src/internal/helpers/url";
 
 
@@ -32,7 +33,11 @@ export const Tabs = defineComponent((userOptions: Partial<TabsOptions> = {}) => 
             }
 
             if (this.$refs.indicator) {
-                this.$refs.list.style.position = 'relative';
+                const validListPositions = ['relative', 'absolute', 'fixed'];
+                if (!validListPositions.includes(getStyle(this.$refs.list, 'position'))) {
+                    this.$refs.list.style.position = 'relative';
+                }
+                
                 Object.assign(this.$refs.indicator.style, {
                     position: 'absolute',
                     top: 0,
