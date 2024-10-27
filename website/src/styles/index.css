@@ -43,7 +43,7 @@ main .content-panel:first-child {
 }
 
 .sl-link-button {
-    @apply rounded-lg px-3 py-[0.6rem] transition-all shadow-sm;
+    @apply !rounded-lg !px-3 !py-[0.6rem] transition-all shadow-sm;
 }
 .sl-link-button svg {
     --sl-icon-size: 1.1em !important;
