@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root[data-theme='light'] {
+    --sl-color-text: var(--sl-color-white);
+    --sl-color-text-accent: var(--sl-color-accent-high);
+}
+
+h1,h2,h3 {
+    @apply tracking-tight
+}
+
+starlight-theme-select {
+    display: none;
+}
+
+.header {
+    background-color: var(--sl-color-black);
+}
+
+.content-panel {
+    border: none !important;
+}
+main .content-panel:first-child {
+    padding-bottom: 0;
+}
+
+.sl-markdown-content a:not(:where(.not-content *)):not(.sl-link-button) {
+    @apply underline-offset-2 transition-opacity hover:opacity-70 focus-visible:opacity-70;
+}
+
+.sl-link-button {
+    @apply rounded-lg px-3 py-[0.6rem] transition-all shadow-sm;
+}
+.sl-link-button svg {
+    --sl-icon-size: 1.1em !important;
+}
+.sl-link-button.primary {
+    @apply hover:bg-[var(--sl-color-gray-1)] focus-visible:bg-[var(--sl-color-gray-1)] hover:shadow-lg focus-visible:shadow-lg;
+}
+.sl-link-button.secondary {
+    @apply hover:bg-[var(--sl-color-gray-7)] focus-visible:bg-[var(--sl-color-gray-7)];
+}

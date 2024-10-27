@@ -1,0 +1,31 @@
+---
+import '../styles/home.css';
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import { LinkButton } from '@astrojs/starlight/components';
+import Accordion from '../components/primitives/accordion.astro';
+---
+
+<StarlightPage frontmatter={{ 
+	title: 'Carve UI', 
+	template: 'splash',
+	description: 'Headless component primitives for Alpine.js.',
+}}>
+	<div class="text-center pt-12 md:pt-20">
+		<h1 class="!text-5xl md:!text-6xl mb-8">Carve Through Complexity</h1>
+		<p class="text-lg mb-3 max-w-[60ch] mx-auto sl-markdown-content">
+			Carve UI is a collection of rugged headless component primitives for
+			<a href="https://alpinejs.dev/" target="_blank">Alpine.js</a>. They are built with a focus on accessibility, and developer experience.
+		</p>
+		<div class="inline-flex">
+			<LinkButton icon="rocket" iconPlacement="start" href="/introduction">Getting started</LinkButton>
+			<LinkButton href="/components" variant="secondary">View components</LinkButton>
+		</div>
+	</div>
+
+	<div class="not-content pt-12 md:pt-20">
+		<div class="w-[400px]">
+			<Accordion />
+		</div>
+	</div>
+	
+</StarlightPage>
