@@ -106,6 +106,7 @@ export const floatingUiMethods = defineComponent((options: FloatingUiOptions) =>
                 zIndex: 'inherit',
                 transform: 'rotate(45deg)',
                 ...arrowBorderStyles[staticSide],
+                borderColor: 'inherit',
             });
         },
     };
