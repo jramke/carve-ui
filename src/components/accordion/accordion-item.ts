@@ -41,7 +41,7 @@ export const AccordionItem = defineComponent((userOptions: Partial<AccordionItem
         set initialOpen(value) {
             this.itemOptions.initialOpen = value;
         },
-        get isOpen() {
+        get isOpen(): boolean {
             // @ts-ignore
             return this.activeAccordion.includes(this.$root.id);
         },
@@ -71,6 +71,9 @@ export const AccordionItem = defineComponent((userOptions: Partial<AccordionItem
             },
             [':aria-labelledby']() {
                 return this.$refs.trigger?.id;
+            },
+            [':role']() {
+                return 'region';
             },
         }
     }
