@@ -1,0 +1,11 @@
+<div x-data="popover">
+    <button x-ref="trigger" class="demo-button">Open popover</button>
+    <div x-ref="content" x-cloak class="px-3 py-2 bg-white border border-zinc-300 rounded-lg shadow-lg shadow-black/5">
+        <p class="font-semibold mb-1">Edit dimensions</p>
+        <label for="width-input" class="text-sm">Width</label>
+        <input id="width-input" class="demo-input mb-2" type="text" value="100%">
+        <label for="height-input" class="text-sm">Height</label>
+        <input id="height-input" class="demo-input mb-2" type="text" value="250px">
+        <div x-ref="arrow" class="rounded-sm border"></div>
+    </div>
+</div>

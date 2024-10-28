@@ -51,6 +51,24 @@ main .content-panel:first-child {
     @apply underline-offset-2 transition-opacity hover:opacity-70 focus-visible:opacity-70;
 }
 
+button {
+    @apply appearance-none cursor-pointer;
+}
+
+.demo-button {
+    @apply inline-flex items-center gap-2 rounded-lg px-3 py-2.5 text-base leading-none transition-all shadow-sm border bg-white border-zinc-300 outline-none hover:bg-zinc-200 focus-visible:ring-offset-2 focus-visible:ring-2 focus-visible:ring-zinc-900;
+}
+.demo-button.primary {
+    @apply text-white bg-zinc-900 border-zinc-900 hover:bg-zinc-700;
+}
+.demo-button.icon {
+    @apply p-1.5 border-none;
+}
+
+.demo-input {
+    @apply block w-full rounded-md px-2.5 py-2 text-base leading-none transition-all border bg-white border-zinc-300 outline-none focus-visible:ring-offset-2 focus-visible:ring-2 focus-visible:ring-zinc-900;
+}
+
 .sl-link-button {
     @apply !rounded-lg !px-3 !py-[0.6rem] transition-all shadow-sm;
 }
@@ -77,7 +95,7 @@ code {
     display: none;
 }
 .expressive-code .copy button {
-    @apply !border-zinc-200 !rounded-md;
+    @apply !border-zinc-200 !rounded-md !bg-white !opacity-100;
 }
 
 .starlight-aside {

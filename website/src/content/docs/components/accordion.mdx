@@ -7,7 +7,7 @@ import { Code } from '@astrojs/starlight/components';
 import Accordion from '@components/demos/accordion.astro';
 import AccordionCode from '@components/demos/accordion.astro?raw';
 
-The **Accordion** component in Carve UI provides a collapsible panel system that allows users to expand and collapse sections of content. It’s ideal for organizing content in a compact, accessible, and user-friendly way.
+The **Accordion** component provides a collapsible panel system that allows users to expand and collapse sections of content. It’s ideal for organizing content in a compact, accessible, and user-friendly way.
 
 <ComponentDemo label="Accordion demo">
     <Accordion slot="preview" />
@@ -15,13 +15,6 @@ The **Accordion** component in Carve UI provides a collapsible panel system that
         slot="code" 
         lang="html" 
         code={AccordionCode} 
-        mark={[
-            'x-data="accordion"', 
-            'x-data="accordionItem"',
-            'x-data="accordionItem({ initialOpen: true })"', 
-            'x-ref="trigger"', 
-            'x-ref="content" x-cloak'
-        ]} 
     />
 </ComponentDemo>
 

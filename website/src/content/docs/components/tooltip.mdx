@@ -1,0 +1,30 @@
+---
+title: Tooltip
+
+---
+import ComponentDemo from '@components/component-demo.astro';
+import { Code } from '@astrojs/starlight/components';
+import Tooltip from '@components/demos/tooltip.astro';
+import TooltipCode from '@components/demos/tooltip.astro?raw';
+
+The **Tooltip** component is a compact, accessible way to provide additional context or brief information on hover or focus. Perfect for clarifying buttons, icons, or other UI elements, Tooltips enhance usability by offering extra detail without cluttering the interface.
+
+<ComponentDemo label="Tooltip demo">
+    <Tooltip slot="preview" />
+    <Code 
+        slot="code" 
+        lang="html" 
+        code={TooltipCode} 
+    />
+</ComponentDemo>
+
+## Structure
+
+<Code lang="html" code={`
+<div x-data="tooltip">
+    <button x-ref="trigger"></button>
+    <div x-ref="content" x-cloak>
+        <div x-ref="arrow"></div>
+    </div>
+</div>
+`} />

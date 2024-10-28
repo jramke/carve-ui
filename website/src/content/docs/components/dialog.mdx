@@ -1,0 +1,37 @@
+---
+title: Dialog
+
+---
+import ComponentDemo from '@components/component-demo.astro';
+import { Code } from '@astrojs/starlight/components';
+import Dialog from '@components/demos/dialog.astro';
+import DialogCode from '@components/demos/dialog.astro?raw';
+
+The **Dialog** component is a flexible, accessible modal dialog that can be used for a variety of interactive content. Ideal for forms, notifications, or additional content, this dialog component focuses user attention on a specific task or message without distractions.
+
+<ComponentDemo label="Dialog demo">
+    <Dialog slot="preview" />
+    <Code 
+        slot="code" 
+        lang="html" 
+        code={DialogCode} 
+    />
+</ComponentDemo>
+
+## Structure
+
+<Code lang="html" code={`
+<div x-data="dialog">
+    <button x-ref="trigger">Open Dialog</button>
+    <template x-teleport="body">
+        <div x-ref="wrapper" x-bind="wrapperProps">
+            <div x-ref="backdrop" x-bind="backdropProps"></div>
+            <div x-ref="content" x-bind="contentProps">
+                <h2 x-ref="title"></h2>
+                <button x-ref="close" x-bind="closeProps"></button>
+                <p x-ref="description"></p>
+            </div>
+        </div>
+    </template>
+</div>
+`} />
