@@ -60,7 +60,10 @@ export const AccordionItem = defineComponent((userOptions: Partial<AccordionItem
             },
             [':aria-controls']() {
                 return this.$refs.content?.id;
-            }
+            },
+            [':type']() {
+                return 'button';
+            },
         },
         contentProps: {
             ['x-show']() {

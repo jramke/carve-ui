@@ -169,9 +169,6 @@ export const Tooltip = defineComponent((userOptions: Partial<TooltipOptions> = {
             ['@keydown.escape']() {
                 this.closeTooltip();
             },
-            [':type']() {
-                return 'button';
-            },
             [':tabindex']() {
                 return '0';
             },
