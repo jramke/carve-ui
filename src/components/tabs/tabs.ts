@@ -5,6 +5,7 @@ import { defineComponent } from "src/internal/helpers/alpine";
 import { safelySetId } from "src/internal/helpers/attributes";
 import { warn } from "src/internal/helpers/logs";
 import { getStyle } from "src/internal/helpers/styles";
+import { timeout } from "src/internal/helpers/time";
 import { getUrlHash, getUrlSearchParam, setUrlHash, setUrlSearchParam } from "src/internal/helpers/url";
 
 
@@ -137,8 +138,11 @@ export const Tabs = defineComponent((userOptions: Partial<TabsOptions> = {}) => 
                 this.options.onActiveTabChange(activeTab);
             }
         },
-        updateIndicator(preventTransition: boolean = false) {
+        async updateIndicator(preventTransition: boolean = false) {
             if (!this.$refs.indicator || !this.activeTriggerElement) return;
+
+            // await this.$nextTick();
+            await timeout(20); // wait to prevent wrong position calculation for example if triggers have flex grow or tablist is a grid
 
             const triggerRect = this.activeTriggerElement.getBoundingClientRect();
             const listRect = this.$refs.list.getBoundingClientRect();
@@ -160,9 +164,8 @@ export const Tabs = defineComponent((userOptions: Partial<TabsOptions> = {}) => 
             }
 
             if (preventTransition) {
-                setTimeout(() => {
-                    this.$refs.indicator.style.transitionDuration = '';
-                }, 0);
+                await this.$nextTick();
+                this.$refs.indicator.style.transitionDuration = '';
             }
         },
 
