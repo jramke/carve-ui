@@ -1,0 +1,20 @@
+---
+import { Icon } from '@astrojs/starlight/components';
+
+interface Props {
+    title: string;
+    link: string;
+}
+
+const { title, link } = Astro.props;
+---
+
+<div x-data="{ id: $id('hero-component-demo') }">
+    <a href={link} class="text-inherit no-underline w-full bg-transparent px-1 flex gap-4 items-center justify-between mb-1">
+        <h2 :id="id">{title}</h2>
+        <Icon size="2rem" name="right-arrow" />
+    </a>
+    <div role="group" aria-roledescription="Component demo" :aria-labelledby="id" class="aspect-[1/0.9] rounded-lg border border-zinc-200 p-6 grid place-items-center [&>*]:max-w-[350px]">
+        <slot />
+    </div>
+</div>

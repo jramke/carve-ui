@@ -12,7 +12,7 @@ const { label } = Astro.props;
         <button x-data="tabTrigger('code')" class="px-3 py-1 text-sm bg-transparent relative z-[1]">Code</button>
         <div x-ref="indicator" x-cloak class="size-3 bg-zinc-300 rounded-[0.25rem] !top-1 h-[calc(100%-(0.25rem*2))] motion-safe:transition-[transform,width,height]"></div>
     </div>
-    <div class="min-h-[500px] mt-6 max-w-[450px] mx-auto grid place-items-center p-8" x-data="tabContent('preview')">
+    <div class="min-h-[500px] mt-6 grid place-items-center p-8" x-data="tabContent('preview')">
         <slot name="preview" />
     </div>
     <div class="min-h-[500px] flex flex-col [&_:is(.expressive-code,.frame,pre)]:!flex-1 [&_:is(.expressive-code,.frame,pre)]:!flex [&_:is(.expressive-code,.frame,pre)]:!flex-col [&_pre]:!border-none [&_pre]:!pt-14 [&_.copy]:!top-3 [&_.copy]:!right-3" x-data="tabContent('code')" x-cloak>

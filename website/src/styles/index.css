@@ -7,6 +7,15 @@
     --sl-color-text-accent: var(--sl-color-accent-high);
     --ec-brdRad: 0.5rem;
     --sl-menu-button-size: 2.2rem;
+    --sl-text-2xl: 1.5rem;
+    --sl-text-3xl: 1.65rem;
+    --sl-text-4xl: 2.15rem;
+    --sl-text-5xl: 3rem;
+}
+
+:focus-visible {
+    outline: var(--sl-color-accent-high) auto 2px;
+    outline-offset: 4px;
 }
 
 [x-cloak] {

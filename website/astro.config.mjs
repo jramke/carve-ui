@@ -6,6 +6,7 @@ import alpinejs from '@astrojs/alpinejs';
 
 // https://astro.build/config
 export default defineConfig({
+	site: 'https://carve.joostramke.com',
 	redirects: {
 		'/components': '/components/accordion',
 	},
@@ -16,6 +17,7 @@ export default defineConfig({
 			logo: {
 				src: './src/assets/logo.svg',
 			},
+			favicon: './src/assets/logo.svg',
 			social: {
 				github: 'https://github.com/jramke/carve-ui',
 			},
@@ -29,6 +31,7 @@ export default defineConfig({
 					items: [
 						{ label: 'Introduction', slug: 'introduction' },
 						{ label: 'Getting started', slug: 'getting-started' },
+						{ label: 'Styling', slug: 'styling' },
 					],
 				},
 				{

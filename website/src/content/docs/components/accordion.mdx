@@ -10,7 +10,9 @@ import AccordionCode from '@components/demos/accordion.astro?raw';
 The **Accordion** component provides a collapsible panel system that allows users to expand and collapse sections of content. It’s ideal for organizing content in a compact, accessible, and user-friendly way.
 
 <ComponentDemo label="Accordion demo">
-    <Accordion slot="preview" />
+    <div class="max-w-[400px] w-full mx-auto" slot="preview">
+        <Accordion slot="preview" />
+    </div>
     <Code 
         slot="code" 
         lang="html" 

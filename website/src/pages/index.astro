@@ -1,8 +1,11 @@
 ---
 import '../styles/home.css';
 import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
-import { Aside, LinkButton } from '@astrojs/starlight/components';
-// import Accordion from '@components/demos/accordion.astro';
+import { LinkButton } from '@astrojs/starlight/components';
+import Tabs from '@components/demos/tabs.astro';
+import Accordion from '@components/demos/accordion.astro';
+import ComponentDemoHero from '@components/component-demo-hero.astro';
+import Dialog from '@components/demos/dialog.astro';
 ---
 
 <StarlightPage frontmatter={{ 
@@ -25,10 +28,29 @@ import { Aside, LinkButton } from '@astrojs/starlight/components';
 		</div>
 	</div>
 
-	<div class="not-content pt-12 md:pt-20 max-w-[600px] mx-auto">
-		<Aside type="caution" title="Under Construction">
-			Carve UI is currently in early development. Expect breaking changes in minor releases until 1.0 is ready! We're actively working on new components and features, so stay tuned!
-		</Aside>
+	<div class="not-content pt-12 md:pt-20 mx-auto grid md:grid-cols-2 gap-12">
+		<ComponentDemoHero title="Accordion" link="/components/accordion">
+			<Accordion />
+		</ComponentDemoHero>
+		<ComponentDemoHero title="Tooltip" link="/components/tooltip">
+			<div x-data="tooltip({ open: true })">
+				<button x-ref="trigger" class="demo-button">Hover me</button>
+				<div x-ref="content" x-cloak class="px-2 py-1 bg-white border border-zinc-300 rounded-lg shadow-lg shadow-black/5">
+					This is a tooltip!
+					<div x-ref="arrow" class="rounded-sm border"></div>
+				</div>
+			</div>
+		</ComponentDemoHero>
+		<ComponentDemoHero title="Dialog" link="/components/dialog">
+			<Dialog />
+		</ComponentDemoHero>
+		<ComponentDemoHero title="Tabs" link="/components/tabs">
+			<Tabs />
+		</ComponentDemoHero>
 	</div>
+
+	<p class="text-center pt-10">
+		And much more! Check out the <a href="/components">full list of components</a>.
+	</p>
 	
 </StarlightPage>

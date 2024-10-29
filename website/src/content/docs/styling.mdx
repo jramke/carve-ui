@@ -1,0 +1,26 @@
+---
+title: Styling
+
+---
+
+Carve UI is designed to give you complete control over the look and feel of your components. By shipping almost zero CSS, Carve UI enables you to style each component according to your project’s unique design requirements without needing to override predefined styles.
+
+## Minimal Default Styles
+
+While Carve UI avoids applying unnecessary styles, some inline styles are added to certain components to ensure they work smoothly out of the box. Beyond these functional styles, the components are unstyled, allowing you to fully customize the appearance.
+
+## Adding Base Styles
+
+To handle cases where content should be hidden until Alpine.js has fully loaded, we recommend including the following base style snippet, as also advised in the Alpine.js documentation:
+
+```css
+[x-cloak] {
+    display: none;
+}
+```
+
+Adding this snippet ensures that elements with the x-cloak attribute remain hidden during the initial loading phase, preventing any unwanted flashes or layout shifts.
+
+## Customizing with Your Own Styles
+
+Each Carve UI component is unstyled by default, giving you full control over its appearance. In the documentation, you’ll find all component demos styled with Tailwind CSS. This lets you copy examples as a starting point with responsive, utility-based classes, or if you prefer, use the code in each component's [Structure section](/components/accordion#structure) to start with the barebones.

@@ -1,0 +1,27 @@
+<div x-data="tabs({ label: 'Manage your account' })" class="border border-zinc-200 rounded-lg">
+    <div x-ref="list" class="flex border-b border-zinc-200">
+        <button x-data="tabTrigger('tab-1')" class="bg-white leading-none rounded-lg p-4 flex-1">Account</button>
+        <button x-data="tabTrigger('tab-2')" class="bg-white leading-none rounded-lg p-4 flex-1">Password</button>
+        <div x-ref="indicator" x-cloak class="size-[2px] bg-zinc-900 rounded-lg !top-auto -bottom-px motion-safe:transition-[transform,width,height]"></div>
+    </div>
+    <div class="p-4" x-data="tabContent('tab-1')">
+        <p class="opacity-80 leading-normal mb-2">Make changes to your account here. Click save when you're done.</p>
+        <label for="name-input" class="text-sm">Name</label>
+        <input id="name-input" class="demo-input mb-2" type="text" value="Joost">
+        <label for="username-input" class="text-sm">Username</label>
+        <input id="username-input" class="demo-input mb-2" type="text" value="@jramke">
+        <div class="text-end mt-5">
+            <button class="demo-button primary">Save changes</button>
+        </div>
+    </div>
+    <div class="p-4" x-data="tabContent('tab-2')" x-cloak>
+        <p class="opacity-80 leading-normal mb-2">Change your password here. After saving, you'll be logged out.</p>
+        <label for="curr-pw-input" class="text-sm">Current password</label>
+        <input id="curr-pw-input" class="demo-input mb-2" type="text" value="">
+        <label for="new-pw-input" class="text-sm">New password</label>
+        <input id="new-pw-input" class="demo-input mb-2" type="text" value="">
+        <div class="text-end mt-5">
+            <button class="demo-button primary">Change password</button>
+        </div>
+    </div>
+</div>

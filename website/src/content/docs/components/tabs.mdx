@@ -1,0 +1,33 @@
+---
+title: Tabs
+
+---
+import ComponentDemo from '@components/component-demo.astro';
+import { Code } from '@astrojs/starlight/components';
+import Tabs from '@components/demos/tabs.astro';
+import TabsCode from '@components/demos/tabs.astro?raw';
+
+The **Tabs** component organizes content into multiple panels, allowing users to switch between views easily. Ideal for sectioned content like settings, product details, or data categories, Tabs create a clean, accessible way to navigate related information within a single interface.
+
+<ComponentDemo label="Tabs demo">
+    <div class="max-w-[350px] mx-auto" slot="preview">
+        <Tabs />
+    </div>
+    <Code 
+        slot="code" 
+        lang="html" 
+        code={TabsCode} 
+    />
+</ComponentDemo>
+
+## Structure
+
+<Code lang="html" code={`
+<div x-data="tabs">
+    <div x-ref="list">
+        <button x-data="tabTrigger('tab-1')"></button>
+        <div x-ref="indicator" x-cloak></div>
+    </div>
+    <div x-data="tabContent('tab-1')"></div>
+</div>
+`} />
