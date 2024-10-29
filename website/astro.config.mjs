@@ -25,6 +25,16 @@ export default defineConfig({
 				'@fontsource-variable/inter',
 				'./src/styles/index.css',
 			],
+			head: [
+				{
+					tag: 'script',
+					attrs: {
+						src: 'https://umami.joostramke.com/script.js',
+						'data-website-id': 'ef37ffea-2507-4d72-bcc5-4cc089b49863',
+						defer: true,
+					}
+				}
+			],
 			sidebar: [
 				{
 					label: 'Overview',
