@@ -17,7 +17,6 @@ export default defineConfig({
 			logo: {
 				src: './src/assets/logo.svg',
 			},
-			favicon: './src/assets/logo.svg',
 			social: {
 				github: 'https://github.com/jramke/carve-ui',
 			},
