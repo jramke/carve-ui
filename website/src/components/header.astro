@@ -10,7 +10,12 @@ import SocialIcons from './social-icons.astro';
 const isHomepage = Astro.url.pathname === '/';
 ---
 
-<div class="header flex">
+<div 
+	class="header-inner flex" 
+	x-data="{ el: $el.parentElement }"
+	x-on:scroll.window="requestAnimationFrame(() => { if (window.scrollY > 25) { el.setAttribute('data-opaque', '') } else { el.removeAttribute('data-opaque') } })"
+	x-init="if (window.scrollY > 25) { el.setAttribute('data-opaque', '') } else { el.removeAttribute('data-opaque') }; setTimeout(() => el.classList.add('transition', 'duration-300'))"
+>
 	<div class="title-wrapper overflow-visible flex">
 		<SiteTitle {...Astro.props} />
 	</div>
@@ -37,7 +42,7 @@ const isHomepage = Astro.url.pathname === '/';
 </div>
 
 <style>
-	.header {
+	.header-inner {
 		gap: var(--sl-nav-gap);
 		justify-content: space-between;
 		align-items: center;

@@ -6,6 +6,8 @@ import Tabs from '@components/demos/tabs.astro';
 import Accordion from '@components/demos/accordion.astro';
 import ComponentDemoHero from '@components/component-demo-hero.astro';
 import Dialog from '@components/demos/dialog.astro';
+import { Image } from 'astro:assets';
+import Mountains from './src/assets/mountains.jpg';
 ---
 
 <StarlightPage frontmatter={{ 
@@ -16,7 +18,11 @@ import Dialog from '@components/demos/dialog.astro';
 		{ tag: 'title', content: 'Carve UI' }
 	]
 }}>
-	<div class="text-center pt-12 md:pt-20">
+	<div class="text-center pt-[175px] sm:pt-[250px] lg:pt-[350px]">
+		<div class="absolute top-0 left-0 w-full h-[300px] sm:h-[400px] lg:h-[500px] overflow-hidden not-content z-[-1]">
+			<div class="w-full h-[50%] absolute bottom-0 left-0 bg-gradient-to-t border-red-200" style="--tw-gradient-stops: var(--smooth-gradient-stops-white-transparent);"></div>
+			<Image class="size-full object-cover object-[center_40%]" src={Mountains} alt="Snowy mountain peaks with clouds." />
+		</div>
 		<h1 class="!text-5xl md:!text-6xl mb-8">Carve Through Complexity</h1>
 		<p class="text-lg mb-3 max-w-[60ch] mx-auto sl-markdown-content">
 			Carve UI is a collection of rugged headless component primitives for

@@ -11,6 +11,9 @@
     --sl-text-3xl: 1.65rem;
     --sl-text-4xl: 2.15rem;
     --sl-text-5xl: 3rem;
+
+    /* gradients generated using the scrim method https://larsenwork.com/easing-gradients/ */
+    --smooth-gradient-stops-white-transparent: rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.738) 19%, rgba(255, 255, 255, 0.541) 34%, rgba(255, 255, 255, 0.382) 47%, rgba(255, 255, 255, 0.278) 56.5%, rgba(255, 255, 255, 0.194) 65%, rgba(255, 255, 255, 0.126) 73%, rgba(255, 255, 255, 0.075) 80.2%, rgba(255, 255, 255, 0.042) 86.1%, rgba(255, 255, 255, 0.021) 91%, rgba(255, 255, 255, 0.008) 95.2%, rgba(255, 255, 255, 0.002) 98.2%, rgba(255, 255, 255, 0) 100%;
 }
 
 :focus-visible {
@@ -31,7 +34,7 @@ starlight-theme-select {
 }
 
 .header {
-    background-color: var(--sl-color-black);
+    @apply bg-transparent [&:not([data-opaque])]:border-transparent data-[opaque]:bg-white/70 data-[opaque]:backdrop-blur-[9px];
 }
 
 .site-title {
