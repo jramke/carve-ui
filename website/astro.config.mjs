@@ -32,7 +32,14 @@ export default defineConfig({
 						'data-website-id': 'ef37ffea-2507-4d72-bcc5-4cc089b49863',
 						defer: true,
 					}
-				}
+				},
+				{
+					tag: 'meta',
+					attrs: {
+						property: 'og:image',
+						content: 'https://carve.joostramke.com/og-image.png',
+					}
+				},
 			],
 			sidebar: [
 				{
@@ -58,4 +65,11 @@ export default defineConfig({
 		tailwind({ applyBaseStyles: false }),
 		alpinejs({ entrypoint: '/src/entrypoint' })
 	],
+	vite: {
+		build: {
+			rollupOptions: {
+			  	external: ['fsevents']
+			}
+		}
+	}
 });
