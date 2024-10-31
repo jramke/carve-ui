@@ -15,6 +15,7 @@ export const GET: APIRoute = async function get() {
 
     const markup = toReactNode`
         <div style="
+            position: relative;
             font-family: 'Inter'; 
             display: flex; 
             align-items: center; 
@@ -22,16 +23,35 @@ export const GET: APIRoute = async function get() {
             gap: 30px; 
             flex-direction: column; 
             height: 100%;
-            padding: 90px 200px;
-            background-image: url('${Config.site}/mountains-small.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            "
-        >
-            <img src="${Config.site}/favicon.svg" alt="" style="width: 100px; height: 100px;"/>
-            <div style="font-size: 100px; letter-spacing: -0.025em; color: #0c0a09;">Carve UI</div>
-            <div style="color: #0c0a09; font-size: 30px; text-align: center;">A collection of rugged and accessible headless component primitives for Alpine.js.</div>
+            background-image: url('${Config.site}/mountains-small.jpg'); 
+        ">
+            <div style="
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 1;
+                display: flex; 
+                background-color: #fff;  
+                opacity: 0.5;
+                height: 100%;
+                width: 100%;       
+            "></div>
+            <div style="
+                display: flex; 
+                align-items: center; 
+                justify-content: center;
+                justify-content: center; 
+                gap: 30px; 
+                flex-direction: column;
+                padding: 30px 150px;
+            ">
+                <img src="${Config.site}/favicon.svg" alt="" style="width: 100px; height: 100px;"/>
+                <div style="font-size: 100px; letter-spacing: -0.025em; color: #0c0a09;">Carve UI</div>
+                <div style="color: #0c0a09; font-size: 36px; text-align: center;">A collection of rugged and accessible headless component primitives for Alpine.js.</div>
+            </div>
         </div>
     `;
 
