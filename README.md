@@ -1,6 +1,8 @@
-# Carve UI
+![Carve UI](https://carve.joostramke.com/og-image.png)
 
-A collection of rugged headless component primitives for [Alpine.js](https://alpinejs.dev). They are built with a focus on accessibility, and developer experience.
+Headless component primitives for [Alpine.js](https://alpinejs.dev).
+
+:book: [Read the docs](https://carve.joostramke.com)
 
 ## Inspiration
 
