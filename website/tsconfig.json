@@ -4,6 +4,7 @@
     "baseUrl": ".",
     "paths": {
       "@components/*": ["src/components/*"],
+      "@api-reference/*": ["src/api-reference/*"],
     }
   },
 }

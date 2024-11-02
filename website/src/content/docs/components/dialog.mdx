@@ -6,6 +6,8 @@ import ComponentDemo from '@components/component-demo.astro';
 import { Code } from '@astrojs/starlight/components';
 import Dialog from '@components/demos/dialog.astro';
 import DialogCode from '@components/demos/dialog.astro?raw';
+import APIReference from "@components/api-reference.astro";
+import { dialogSchema } from "@api-reference/dialog.api.ts";
 
 The **Dialog** component is a flexible, accessible modal dialog that can be used for a variety of interactive content. Ideal for forms, notifications, or additional content, this dialog component focuses user attention on a specific task or message without distractions.
 
@@ -35,3 +37,7 @@ The **Dialog** component is a flexible, accessible modal dialog that can be used
     </template>
 </div>
 `} />
+
+## API Reference
+
+<APIReference schema={dialogSchema} />

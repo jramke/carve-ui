@@ -1,9 +1,11 @@
+import type { TabTriggerOptions } from "./types";
+
 import Alpine from "alpinejs";
 import { defineComponent } from "src/internal/helpers/alpine";
 import { safelySetId } from "src/internal/helpers/attributes";
 
 
-export const TabTrigger = defineComponent((value: string) => {
+export const TabTrigger = defineComponent((value: TabTriggerOptions) => {
     return {
         init() {
             // @ts-ignore

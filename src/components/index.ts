@@ -11,6 +11,9 @@ import { Tooltip } from './tooltip';
 import { Tabs, TabContent, TabTrigger } from './tabs';
 // import { Select } from './select';
 
+// Export all types for direct usage
+export * from './types';
+
 // Export all components for direct usage
 export {
     Accordion,

@@ -6,6 +6,8 @@ import ComponentDemo from '@components/component-demo.astro';
 import { Code } from '@astrojs/starlight/components';
 import Popover from '@components/demos/popover.astro';
 import PopoverCode from '@components/demos/popover.astro?raw';
+import APIReference from "@components/api-reference.astro";
+import { popoverSchema } from "@api-reference/popover.api.ts";
 
 The **Popover** component provides a lightweight, accessible way to display contextual information or additional options. It’s perfect for showing interactive content that appears in relation to a specific element on the page.
 
@@ -28,3 +30,7 @@ The **Popover** component provides a lightweight, accessible way to display cont
     </div>
 </div>
 `} />
+
+## API Reference
+
+<APIReference schema={popoverSchema} />

@@ -1,0 +1,88 @@
+---
+import type { APISchema } from "@api-reference/schema";
+import { Icon } from '@astrojs/starlight/components';
+
+interface Props {
+  schema: APISchema;
+}
+
+const { schema } = Astro.props;
+
+function formatDefaultValue(defaultValue: any) {
+    if (defaultValue === "") {
+        return '""';
+    }
+
+    if (typeof defaultValue === 'object') {
+        return JSON.stringify(defaultValue, null, 2);
+    }
+    return defaultValue !== undefined ? String(defaultValue) : "-";
+}
+
+function markdownToHtmlCode(input: string): string {
+    return input.replace(/`([^`]+)`/g, "<code>$1</code>");
+}
+
+function formatEnumValues(enumValues: string[] | undefined): string {
+    if (!enumValues || enumValues.length === 0) {
+        return "";
+    }
+    return enumValues.map(value => {
+        if (value.startsWith('*') && value.endsWith('*')) {
+            return value.slice(1, -1);
+        }
+        return `"${value}"`
+    }).join(" | ");
+}
+
+---
+<div class="mt-4 peer-[.api-reference-table]:pt-5">
+    <code class="!text-base">
+        {schema.type}="<span class="font-semibold">{schema.title}</span>"
+    </code>
+    <p class="mt-2">{schema.description}</p>
+</div>
+
+<table class="api-reference-table peer">
+    <thead>
+        <tr class="text-sm">
+            <th>Property</th>
+            <th>Type</th>
+            <th>Description</th>
+            <th>Default</th>
+        </tr>
+    </thead>
+    <tbody>
+        {Object.entries(schema.props ?? {}).map(([propName, prop]) => (
+            <tr>
+                <td class="whitespace-nowrap">
+                    <code class="!text-base">{propName}</code>
+                </td>
+                <td class="text-zinc-600 text-sm">
+                    {prop.type === "enum" ? (
+                        <div class="cursor-default inline-flex items-center gap-1">
+                            {prop.type}
+                            <div x-data="tooltip({ offset: 25 })">
+                                <div x-ref="trigger" class="cursor-help">
+                                    <Icon name="information" />
+                                </div>
+                                <div x-ref="content" x-cloak class="px-3 py-2 bg-white border border-zinc-300 rounded-lg shadow-lg shadow-black/5">
+                                    {formatEnumValues(prop.enumValues)}
+                                    <div x-ref="arrow" class="rounded-sm border"></div>
+                                </div>
+                            </div>
+                        </div>
+                    ) : (
+                        <>
+                            {prop.type}
+                        </>
+                    )}
+                </td>
+                <td class="text-sm w-full" set:html={markdownToHtmlCode(prop.description)}></td>
+                <td class="whitespace-nowrap">
+                    <code>{formatDefaultValue(prop.default)}</code>
+                </td>
+            </tr>
+        ))}
+    </tbody>
+</table>

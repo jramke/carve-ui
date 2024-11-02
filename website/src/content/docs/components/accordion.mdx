@@ -6,6 +6,8 @@ import ComponentDemo from '@components/component-demo.astro';
 import { Code } from '@astrojs/starlight/components';
 import Accordion from '@components/demos/accordion.astro';
 import AccordionCode from '@components/demos/accordion.astro?raw';
+import APIReference from "@components/api-reference.astro";
+import { accordionSchema, accordionItemSchema } from "@api-reference/accordion.api.ts";
 
 The **Accordion** component provides a collapsible panel system that allows users to expand and collapse sections of content. It’s ideal for organizing content in a compact, accessible, and user-friendly way.
 
@@ -32,3 +34,8 @@ The **Accordion** component provides a collapsible panel system that allows user
     </div>
 </div>
 `} />
+
+## API Reference
+
+<APIReference schema={accordionSchema} />
+<APIReference schema={accordionItemSchema} />

@@ -6,6 +6,8 @@ import ComponentDemo from '@components/component-demo.astro';
 import { Code } from '@astrojs/starlight/components';
 import Tooltip from '@components/demos/tooltip.astro';
 import TooltipCode from '@components/demos/tooltip.astro?raw';
+import APIReference from "@components/api-reference.astro";
+import { tooltipSchema } from "@api-reference/tooltip.api.ts";
 
 The **Tooltip** component is a compact, accessible way to provide additional context or brief information on hover or focus. Perfect for clarifying buttons, icons, or other UI elements, Tooltips enhance usability by offering extra detail without cluttering the interface.
 
@@ -28,3 +30,7 @@ The **Tooltip** component is a compact, accessible way to provide additional con
     </div>
 </div>
 `} />
+
+## API Reference
+
+<APIReference schema={tooltipSchema} />

@@ -1,9 +1,11 @@
+import type { TabContentOptions } from "./types";
+
 import Alpine from "alpinejs";
 import { defineComponent } from "src/internal/helpers/alpine";
 import { safelySetId } from "src/internal/helpers/attributes";
 
 
-export const TabContent = defineComponent((value: string) => {
+export const TabContent = defineComponent((value: TabContentOptions) => {
     
     return {
         init() {

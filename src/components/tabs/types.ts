@@ -5,3 +5,7 @@ export type TabsOptions = {
     urlSync: 'hash' | 'search' | false;
     label?: string;
 };
+
+export type TabTriggerOptions = string;
+
+export type TabContentOptions = string;

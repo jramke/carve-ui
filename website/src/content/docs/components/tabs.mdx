@@ -6,6 +6,8 @@ import ComponentDemo from '@components/component-demo.astro';
 import { Code } from '@astrojs/starlight/components';
 import Tabs from '@components/demos/tabs.astro';
 import TabsCode from '@components/demos/tabs.astro?raw';
+import APIReference from "@components/api-reference.astro";
+import { tabsSchema,tabTriggerSchema, tabContentSchema } from "@api-reference/tabs.api.ts";
 
 The **Tabs** component organizes content into multiple panels, allowing users to switch between views easily. Ideal for sectioned content like settings, product details, or data categories, Tabs create a clean, accessible way to navigate related information within a single interface.
 
@@ -31,3 +33,9 @@ The **Tabs** component organizes content into multiple panels, allowing users to
     <div x-data="tabContent('tab-1')"></div>
 </div>
 `} />
+
+## API Reference
+
+<APIReference schema={tabsSchema} />
+<APIReference schema={tabTriggerSchema} />
+<APIReference schema={tabContentSchema} />

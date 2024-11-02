@@ -6,6 +6,8 @@ import ComponentDemo from '@components/component-demo.astro';
 import { Code } from '@astrojs/starlight/components';
 import AlertDialog from '@components/demos/alert-dialog.astro';
 import AlertDialogCode from '@components/demos/alert-dialog.astro?raw';
+import APIReference from "@components/api-reference.astro";
+import { alertDialogSchema } from "@api-reference/alert-dialog.api.ts";
 
 The **Alert Dialog** component is a modal dialog designed for critical messages that require user attention. It’s perfect for displaying alerts, confirmations, or actions that users need to acknowledge before proceeding, ensuring they focus on important information in a clear, accessible way.
 
@@ -36,3 +38,7 @@ The **Alert Dialog** component is a modal dialog designed for critical messages 
     </template>
 </div>
 `} />
+
+## API Reference
+
+<APIReference schema={alertDialogSchema} />
