@@ -163,7 +163,7 @@ export const Tooltip = defineComponent((userOptions: Partial<TooltipOptions> = {
             ['@blur']() {
                 this.closeTooltip(true);
             },
-            [':aria-described-by']() {
+            [':aria-describedby']() {
                 return this.$refs.content.id;
             },
             ['@keydown.escape']() {
