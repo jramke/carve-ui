@@ -19,20 +19,18 @@
 		<div class="p-32 space-y-32">
 
             <div x-data="alertDialog">
-                <button x-ref="trigger" class="inline-flex items-center justify-center h-10 px-4 py-2 text-sm font-medium transition-colors bg-white border rounded-md hover:bg-neutral-100 active:bg-white focus:bg-white focus:outline-none focus:ring-2 focus:ring-neutral-200/60 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none">Open Alert</button>
+                <button x-ref="trigger" class="demo-button">Open Alert Dialog</button>
                 <template x-teleport="body">
                     <div x-ref="wrapper" x-bind="wrapperProps" class="fixed top-0 left-0 z-[99] flex items-center justify-center w-screen h-screen">
-                        <div x-ref="backdrop" x-bind="backdropProps" class="absolute inset-0 w-full h-full bg-black bg-opacity-40"></div>
-                        <div x-ref="content" x-bind="contentProps" class="relative w-full py-6 bg-white px-7 sm:max-w-lg sm:rounded-lg">
-                            <div class="flex items-center justify-between pb-2">
-                                <h3 x-ref="title" class="text-lg font-semibold">Alert Modal Title</h3>
-                            </div>
-                            <div class="relative w-auto" x-ref="description">
-                                <p>This is placeholder text. Replace it with your own content.</p>
-                            </div>
-                            <div class="flex gap-4">
-                                <button x-bind="closeProps">Cancel</button>
-                                <button @click="closeDialog(); console.log('confirmed');">Do it</button>
+                        <div x-ref="backdrop" x-bind="backdropProps" class="absolute inset-0 size-full bg-black bg-opacity-50 backdrop-blur-sm"></div>
+                        <div x-ref="content" x-bind="contentProps" class="bg-white relative w-full py-6 px-7 sm:max-w-lg rounded-lg mx-4">
+                            <h2 x-ref="title" class="text-lg font-semibold pb-2">Alert Dialog Title</h2>
+                            <p x-ref="description">
+                                This is placeholder text. Replace it with your own content.
+                            </p>
+                            <div class="flex gap-3 justify-end pt-4">
+                                <button class="demo-button" x-bind="closeProps">Cancel</button>
+                                <button class="demo-button primary" @click="console.log('continued'); closeDialog();">Continue</button>
                             </div>
                         </div>
                     </div>
@@ -40,19 +38,21 @@
             </div>
 
             <div x-data="dialog">
-                <button x-ref="trigger" class="inline-flex items-center justify-center h-10 px-4 py-2 text-sm font-medium transition-colors bg-white border rounded-md hover:bg-neutral-100 active:bg-white focus:bg-white focus:outline-none focus:ring-2 focus:ring-neutral-200/60 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none">Open Dialog</button>
+                <button x-ref="trigger" class="demo-button">Open Dialog</button>
                 <template x-teleport="body">
                     <div x-ref="wrapper" x-bind="wrapperProps" class="fixed top-0 left-0 z-[99] flex items-center justify-center w-screen h-screen">
-                        <div x-ref="backdrop" x-bind="backdropProps" class="absolute inset-0 w-full h-full bg-black bg-opacity-40"></div>
-                        <div x-ref="content" x-bind="contentProps" class="relative w-full py-6 bg-white px-7 sm:max-w-lg sm:rounded-lg">
-                            <div class="flex items-center justify-between pb-2">
-                                <h3 x-ref="title" class="text-lg font-semibold">Modal Title</h3>
-                                <button x-ref="close" x-bind="closeProps" class="absolute top-0 right-0 flex items-center justify-center w-8 h-8 mt-5 mr-5 text-gray-600 rounded-full hover:text-gray-800 hover:bg-gray-50">
-                                    <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>  
-                                </button>
-                            </div>
-                            <div class="relative w-auto" x-ref="description">
-                                <p>This is placeholder text. Replace it with your own content.</p>
+                        <div x-ref="backdrop" x-bind="backdropProps" class="absolute inset-0 size-full bg-black bg-opacity-50 backdrop-blur-sm"></div>
+                        <div x-ref="content" x-bind="contentProps" class="bg-white relative w-full py-6 px-7 sm:max-w-lg rounded-lg mx-4">
+                            <h2 x-ref="title" class="text-lg font-semibold pb-2 me-8">Dialog Title</h2>
+                            <button x-ref="close" x-bind="closeProps" class="absolute top-3 right-3 demo-button icon">
+                                <span class="sr-only">Close dialog</span>
+                                <svg aria-hidden="true" class="size-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>  
+                            </button>
+                            <p x-ref="description">
+                                This is placeholder text. Replace it with your own content.
+                            </p>
+                            <div class="flex gap-3 justify-end pt-4">
+                                <button class="demo-button primary" @click="console.log('continued'); closeDialog();">Continue</button>
                             </div>
                         </div>
                     </div>
@@ -61,87 +61,97 @@
 
 
             <div x-data="popover">
-                <button x-ref="trigger" class="inline-flex items-center justify-center h-10 px-4 py-2 text-sm font-medium transition-colors bg-white border rounded-md hover:bg-neutral-100 active:bg-white focus:bg-white focus:outline-none focus:ring-2 focus:ring-neutral-200/60 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none">declarative dropdown</button>
-                <div x-ref="content" x-cloak class="p-2 bg-white border rounded-md">
-                    <p>Input</p>
-                    <input type="text">
-                    <button class="btn btn-primary" @click="closePopover">close</button>
+                <button x-ref="trigger" class="demo-button">Open popover</button>
+                <div x-ref="content" x-cloak class="flex flex-col px-3 py-2 bg-white border border-zinc-300 rounded-lg shadow-lg shadow-black/5">
+                    <p class="font-semibold mb-1">Edit dimensions</p>
+                    <label for="width-input" class="text-sm">Width</label>
+                    <input id="width-input" class="demo-input mb-2" type="text" value="100%">
+                    <label for="height-input" class="text-sm">Height</label>
+                    <input id="height-input" class="demo-input mb-2" type="text" value="250px">
                     <div x-ref="arrow" class="rounded-sm border"></div>
                 </div>
             </div>
+
             
             <div x-data="tooltip">
-                <div x-ref="trigger" class="inline-block px-3 py-1 text-xs rounded-full text-neutral-500 bg-neutral-100">hover me</div>
-                <div x-ref="content" x-cloak class="p-2 bg-white border rounded-md">
+                <button x-ref="trigger" class="demo-button">Hover me</button>
+                <div x-ref="content" x-cloak class="px-2 py-1 bg-white border border-zinc-300 rounded-lg shadow-lg shadow-black/5">
                     This is a tooltip!
                     <div x-ref="arrow" class="rounded-sm border"></div>
                 </div>
             </div>
 
 
-            <!-- <div x-data="dropdownMenu">
-                <button x-bind="triggerProps" x-ref="trigger" class="inline-flex items-center justify-center h-10 px-4 py-2 text-sm font-medium transition-colors bg-white border rounded-md hover:bg-neutral-100 active:bg-white focus:bg-white focus:outline-none focus:ring-2 focus:ring-neutral-200/60 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none">DropdownMenu</button>
-                <div x-bind="panelProps" x-ref="panel" x-cloak class="p-2 bg-white border rounded-md">
-                    <div x-bind="itemProps" class="data-[highlighted]:text-red">Item 1</div>
-                    <div x-bind="separatorProps" class="h-px bg-neutral-400 my-1"></div>
-                    <div id="test-id" x-bind="itemProps" class="data-[highlighted]:text-red">Item 2</div>
-                    <div x-ref="arrow" class="rounded-sm border"></div>
-                </div>
-            </div> -->
-
-
-            <div x-data="accordion" class="relative w-full mx-auto overflow-hidden text-sm font-normal bg-white border border-gray-200 divide-y divide-gray-200 rounded-md">
-                <div x-data="accordionItem({ initialOpen: true })" class="cursor-pointer group">
-                    <h2>
-                        <button x-ref="trigger" class="flex items-center justify-between w-full p-4 text-left select-none group-hover:underline">
-                            <span>What is Pines?</span>
+            <div x-data="accordion" class="relative w-full mx-auto text-sm font-normal bg-white border border-gray-200 divide-y divide-gray-200 rounded-md">
+                <div x-data="accordionItem({ initialOpen: true })" class="group">
+                    <h2 class="text-base font-semibold">
+                        <button x-ref="trigger" class="overflow-hidden rounded-md flex items-center bg-white justify-between w-full p-4 text-left select-none underline-offset-2 group-hover:underline">
+                            <span>What is Carve?</span>
                             <svg aria-hidden="true" class="w-4 h-4 motion-safe:duration-200 ease-out" :class="{ 'rotate-180': isOpen }" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
                         </button>
                     </h2>
                     <div x-ref="content" x-cloak> 
                         <div class="p-4 pt-0 opacity-70">
-                            Pines is a UI library built for AlpineJS and TailwindCSS.
+                            Carve UI is a collection of rugged and accessible headless component primitives for Alpine.js.
                         </div>
                     </div>
                 </div>
-                <div x-data="accordionItem" class="cursor-pointer group">
-                    <h2>
-                        <button x-ref="trigger" class="flex items-center justify-between w-full p-4 text-left select-none group-hover:underline">
-                            <span>How do I install Pines?</span>
+                <div x-data="accordionItem" class="group">
+                    <h2 class="text-base font-semibold">
+                        <button x-ref="trigger" class="overflow-hidden rounded-md flex items-center bg-white justify-between w-full p-4 text-left select-none underline-offset-2 group-hover:underline">
+                            <span>How do I install Carve?</span>
                             <svg aria-hidden="true" class="w-4 h-4 motion-safe:duration-200 ease-out" :class="{ 'rotate-180': isOpen }" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
                         </button>
                     </h2>
                     <div x-ref="content" x-cloak>
                         <div class="p-4 pt-0 opacity-70">
-                            Add AlpineJS and TailwindCSS to your page and then copy and paste any of these elements into your project.
+                            Add AlpineJS and Carve UI and start using the pre built primitives.
+                        </div>
+                    </div>
+                </div>
+                <div x-data="accordionItem" class="group">
+                    <h2 class="text-base font-semibold">
+                        <button x-ref="trigger" class="overflow-hidden rounded-md flex items-center bg-white justify-between w-full p-4 text-left select-none underline-offset-2 group-hover:underline">
+                            <span>Can i customize Carve?</span>
+                            <svg aria-hidden="true" class="w-4 h-4 motion-safe:duration-200 ease-out" :class="{ 'rotate-180': isOpen }" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </button>
+                    </h2>
+                    <div x-ref="content" x-cloak>
+                        <div class="p-4 pt-0 opacity-70">
+                            Yes! Carve is built to be customized and extended.
                         </div>
                     </div>
                 </div>
             </div>
 
 
-            <div x-data="tabs({ initialActive: 'tab-2', label: 'Hello' })" class="border border-gray-200 rounded-md">
-                <div x-ref="list" class="flex justify-between">
-                    <button x-data="tabTrigger('tab-1')" class="p-3" :class="{ 'text-red-500': isActive }">Tab 1</button>
-                    <button x-data="tabTrigger('tab-2')" class="p-3" :class="{ 'text-red-500': isActive }">Tab 2 longer</button>
-                    <button x-data="tabTrigger('tab-3')" class="p-3" :class="{ 'text-red-500': isActive }">Tab 3</button>
-                    <div x-ref="indicator" x-cloak class="size-3 bg-green-500 motion-safe:transition-[transform,width,height]"></div>
+            <div x-data="tabs({ label: 'Manage your account' })" class="border border-zinc-200 rounded-lg max-w-[400px]">
+                <div x-ref="list" class="flex border-b border-zinc-200">
+                    <button x-data="tabTrigger('tab-1')" class="bg-white leading-none rounded-lg p-4 flex-1">Account</button>
+                    <button x-data="tabTrigger('tab-2')" class="bg-white leading-none rounded-lg p-4 flex-1">Password</button>
+                    <div x-ref="indicator" x-cloak class="size-[2px] bg-zinc-900 rounded-lg !top-auto -bottom-px motion-safe:transition-[transform,width,height]"></div>
                 </div>
-                <div class="p-3" :class="{ 'text-red-500': isActive }" x-data="tabContent('tab-1')">
-                    Tab 1 content
+                <div class="p-4 flex flex-col" x-data="tabContent('tab-1')">
+                    <p class="opacity-80 leading-normal mb-2">Make changes to your account here. Click save when you're done.</p>
+                    <label for="name-input" class="text-sm">Name</label>
+                    <input id="name-input" class="demo-input mb-2" type="text" value="Joost">
+                    <label for="username-input" class="text-sm">Username</label>
+                    <input id="username-input" class="demo-input mb-2" type="text" value="@jramke">
+                    <div class="text-end mt-5">
+                        <button class="demo-button primary">Save changes</button>
+                    </div>
                 </div>
-                <div class="p-3" :class="{ 'text-red-500': isActive }" x-data="tabContent('tab-2')" x-cloak>
-                    Tab 2 content
-                </div>
-                <div class="p-3" :class="{ 'text-red-500': isActive }" x-data="tabContent('tab-3')" x-cloak>
-                    Tab 3 content
+                <div class="p-4 flex flex-col" x-data="tabContent('tab-2')" x-cloak>
+                    <p class="opacity-80 leading-normal mb-2">Change your password here. After saving, you'll be logged out.</p>
+                    <label for="curr-pw-input" class="text-sm">Current password</label>
+                    <input id="curr-pw-input" class="demo-input mb-2" type="text" value="">
+                    <label for="new-pw-input" class="text-sm">New password</label>
+                    <input id="new-pw-input" class="demo-input mb-2" type="text" value="">
+                    <div class="text-end mt-5">
+                        <button class="demo-button primary">Change password</button>
+                    </div>
                 </div>
             </div>
-
-            <!-- <div x-data="select">
-                <span x-ref="label">Select label</span>
-
-            </div> -->
 
         </div>
 

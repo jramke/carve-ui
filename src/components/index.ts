@@ -6,7 +6,6 @@ import { Accordion, AccordionItem } from './accordion';
 import { Popover } from './popover';
 import { Dialog } from './dialog';
 import { AlertDialog } from './alert-dialog';
-// import { DropdownMenu } from './WIP-dropdown-menu';
 import { Tooltip } from './tooltip';
 import { Tabs, TabContent, TabTrigger } from './tabs';
 // import { Select } from './select';
@@ -47,15 +46,13 @@ export const components = {
 
     alertDialog: { name: 'alertDialog', component: AlertDialog },
 
-    // dropdownMenu: { name: 'dropdownMenu', component: DropdownMenu },
-
     tooltip: { name: 'tooltip', component: Tooltip },
 
     tabs: { name: 'tabs', component: Tabs },
     tabContent: { name: 'tabContent', component: TabContent },
     tabTrigger: { name: 'tabTrigger', component: TabTrigger },
 
-    // select: { name: 'select', component: Select },
+    select: { name: 'select', component: Select },
 } as const;
 
 // Plugin registry
