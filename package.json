@@ -29,6 +29,7 @@
   ],
   "author": "Joost Ramke <hey@joostramke.com>",
   "license": "MIT",
+  "homepage": "https://carve.joostramke.com/",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jramke/carve-ui.git"
