@@ -8,7 +8,7 @@ import { Dialog } from './dialog';
 import { AlertDialog } from './alert-dialog';
 import { Tooltip } from './tooltip';
 import { Tabs, TabContent, TabTrigger } from './tabs';
-// import { Select } from './select';
+import { Select, SelectItem } from './select';
 
 // Export all types for direct usage
 export * from './types';
@@ -32,7 +32,8 @@ export {
     TabContent,
     TabTrigger,
 
-    // Select,
+    Select,
+    SelectItem,
 };
 
 // Component registry for registration system
@@ -53,6 +54,7 @@ export const components = {
     tabTrigger: { name: 'tabTrigger', component: TabTrigger },
 
     select: { name: 'select', component: Select },
+    selectItem: { name: 'selectItem', component: SelectItem },
 } as const;
 
 // Plugin registry

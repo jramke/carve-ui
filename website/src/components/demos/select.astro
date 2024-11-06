@@ -1,0 +1,29 @@
+<div x-data="{fruits: [
+    { value: 'apple', label: 'Apple' }, 
+    { value: 'banana', label: 'Banana' }, 
+    { value: 'blueberry', label: 'Blueberry' }, 
+    { value: 'grapes', label: 'Grapes' }, 
+    { value: 'kiwi', label: 'Kiwi' }, 
+    { value: 'mango', label: 'Mango' }, 
+    { value: 'orange', label: 'Orange' },
+    { value: 'pineapple', label: 'Pineapple' }, 
+    { value: 'strawberry', label: 'Strawberry' }, 
+    { value: 'watermelon', label: 'Watermelon' }
+]}">
+    <div class="inline-flex flex-col gap-1 relative" x-data="select">
+        <span x-ref="label">Favorite fruit</span>
+        <button x-ref="trigger" class="rounded-md p-2 bg-transparent border border-zinc-200 w-[200px] flex items-center justify-between">
+            <span x-ref="selectValue">Select a fruit</span>
+            <svg aria-hidden="true" class="size-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7 15 5 5 5-5"/><path d="m7 9 5-5 5 5"/></svg>
+        </button>
+        <div x-ref="content" x-cloak class="flex flex-col gap-1 rounded-md p-1 scroll-py-1 bg-white border border-zinc-200 shadow-lg shadow-black/5 !w-full max-h-[16.5rem] overflow-auto">
+            <template x-for="item in fruits" :key="item.value">
+                <div x-data="selectItem(item)" class="inline-flex justify-between items-center gap-2 rounded py-1 px-2 cursor-default data-[highlighted]:bg-zinc-200 data-[disabled]:opacity-50 data-[disabled]:cursor-not-allowed">
+                    <span x-ref="selectItemLabel"></span>
+                    <svg aria-hidden="true" x-show="isSelected" class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                </div>
+            </template>
+        </div>
+        <input type="hidden" x-model="value">
+    </div>
+</div>

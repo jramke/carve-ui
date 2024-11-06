@@ -1,0 +1,43 @@
+---
+title: Select
+
+---
+import ComponentDemo from '@components/component-demo.astro';
+import { Code } from '@astrojs/starlight/components';
+import Select from '@components/demos/select.astro';
+import SelectCode from '@components/demos/select.astro?raw';
+import APIReference from "@components/api-reference.astro";
+import { selectSchema, selectItemSchema } from "@api-reference/select.api";
+
+The **Select** component is an accessible, customizable dropdown that lets users choose from multiple options. Ideal for forms or settings, Select streamlines user input by organizing choices in a clean, interactive way, keeping interfaces intuitive and clutter-free.
+
+<ComponentDemo label="Tabs demo">
+    <Select slot="preview" />
+    <Code 
+        slot="code" 
+        lang="html" 
+        code={SelectCode} 
+    />
+</ComponentDemo>
+
+## Structure
+
+<Code lang="html" code={`
+<div x-data="select">
+    <span x-ref="label"></span>
+    <button x-ref="trigger">
+        <span x-ref="selectValue"></span>
+    </button>
+    <div x-ref="content" x-cloak>
+        <div x-data="selectItem({ value, label, disabled })">
+            <span x-ref="selectItemLabel"></span>
+        </div>
+    </div>
+    <input type="hidden" x-model="value">
+</div>
+`} />
+
+## API Reference
+
+<APIReference schema={selectSchema} />
+<APIReference schema={selectItemSchema} />

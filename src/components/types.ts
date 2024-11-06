@@ -4,4 +4,4 @@ export * from './dialog/types';
 export * from './popover/types';
 export * from './tabs/types';
 export * from './tooltip/types';
-// export * from './select/types';
+export * from './select/types';
