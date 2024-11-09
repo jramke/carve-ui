@@ -5,3 +5,7 @@ export function safelySetId(element: HTMLElement, id: string) {
     }
     return element.id;
 }
+
+export function isDisabled(element: HTMLElement) {
+    return element.getAttribute('disabled') === 'true' || element.getAttribute('aria-disabled') === 'true' || element.hasAttribute('data-disabled');
+}
