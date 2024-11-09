@@ -39,15 +39,6 @@ importers:
 
   test:
     dependencies:
-      '@alpinejs/collapse':
-        specifier: ^3.14.3
-        version: 3.14.3
-      '@alpinejs/focus':
-        specifier: ^3.14.3
-        version: 3.14.3
-      '@alpinejs/resize':
-        specifier: ^3.14.3
-        version: 3.14.3
       '@astrojs/alpinejs':
         specifier: ^0.4.0
         version: 0.4.0(@types/alpinejs@3.13.10)(alpinejs@3.14.3)
@@ -60,11 +51,8 @@ importers:
       '@types/alpinejs':
         specifier: ^3.13.10
         version: 3.13.10
-      alpinejs:
-        specifier: ^3.14.3
-        version: 3.14.3
       astro:
-        specifier: ^4.16.0
+        specifier: ^4.16.1
         version: 4.16.6(@types/node@22.8.6)(rollup@4.24.1)(typescript@5.6.3)
       carve-ui:
         specifier: workspace:*
@@ -78,15 +66,6 @@ importers:
 
   website:
     dependencies:
-      '@alpinejs/collapse':
-        specifier: ^3.14.3
-        version: 3.14.3
-      '@alpinejs/focus':
-        specifier: ^3.14.3
-        version: 3.14.3
-      '@alpinejs/resize':
-        specifier: ^3.14.3
-        version: 3.14.3
       '@astrojs/alpinejs':
         specifier: ^0.4.0
         version: 0.4.0(@types/alpinejs@3.13.10)(alpinejs@3.14.3)
@@ -111,9 +90,6 @@ importers:
       '@types/alpinejs':
         specifier: ^3.13.10
         version: 3.13.10
-      alpinejs:
-        specifier: ^3.14.3
-        version: 3.14.3
       astro:
         specifier: ^4.15.3
         version: 4.16.6(@types/node@22.8.6)(rollup@4.24.1)(typescript@5.6.3)

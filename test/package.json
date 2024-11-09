@@ -10,14 +10,10 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@alpinejs/collapse": "^3.14.3",
-    "@alpinejs/focus": "^3.14.3",
-    "@alpinejs/resize": "^3.14.3",
     "@astrojs/alpinejs": "^0.4.0",
     "@astrojs/check": "^0.9.4",
     "@astrojs/tailwind": "^5.1.2",
     "@types/alpinejs": "^3.13.10",
-    "alpinejs": "^3.14.3",
     "astro": "^4.16.1",
     "carve-ui": "workspace:*",
     "tailwindcss": "^3.4.13",
