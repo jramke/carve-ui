@@ -53,6 +53,7 @@ export const Tooltip = defineComponent((userOptions: Partial<TooltipOptions> = {
             if (this.closeTimeout) {
                 window.clearTimeout(this.closeTimeout);
             }
+            this.cleanup?.();
         },
 
         get open() {

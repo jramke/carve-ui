@@ -41,6 +41,9 @@ export const Popover = defineComponent((userOptions: Partial<PopoverOptions> = {
                 this.setupAutoUpdate();
             }
         },
+        destroy() {
+            this.cleanup?.();
+        },
 
         get open() {
             return this.options.open;
