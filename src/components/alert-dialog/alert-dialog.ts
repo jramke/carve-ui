@@ -1,7 +1,8 @@
-import { BaseDialog, BaseDialogOptions, type BaseDialogInternalOptions } from "src/internal/base/dialog";
+import { BaseDialog, type BaseDialogInternalOptions } from "src/internal/base/dialog";
+import { AlertDialogOptions } from "./types";
 
 
-export const AlertDialog = (userOptions: Partial<BaseDialogOptions> = {}) => {
+export const AlertDialog = (userOptions: Partial<AlertDialogOptions> = {}) => {
     const internalOptions: BaseDialogInternalOptions = {
         role: 'alertdialog',
         // closeButton: false,
